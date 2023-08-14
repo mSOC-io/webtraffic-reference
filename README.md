@@ -66,3 +66,24 @@ Likely: Suspicious
 "GET /console/" is likely a HTTP request for a console or terminal application. The search results include references to several console or terminal applications, including Get Console, a powerful and complete terminal app that provides physical serial console access to network and other equipment as well as SSHv2, Telnet, and other protocols. Get Console is the first and only Apple approved iPad app that allows for physical serial connectivity in a terminal app - it also does Telnet, SSH, converts SecureCRT and PuTTY files and is fully scriptable. 
 https://www.youtube.com/watch?v=mll_SKgSbok
 https://apps.apple.com/us/app/get-console/id412067943
+_________________
+**GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1**
+
+Likely: Suspicious
+
+"GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" is a HTTP request that includes a parameter for starting a debugging session with the PHPStorm IDE. The "XDEBUG_SESSION_START" parameter is used to initiate a debugging session with the Xdebug extension for PHP, which is commonly used for debugging PHP applications. This request can also be exploited by attackers to gain unauthorized access to a server or application if the server is not properly secured or if the Xdebug extension is not configured correctly. 
+https://laracasts.com/series/phpstorm-for-laravel-developers
+https://www.jetbrains.com/phpstorm/features/ 
+_________________
+**GET /druid/index.html**
+
+It is possible that the request is related to accessing the index.html page of the Apache Druid web interface.Apache Druid is an open-source distributed data store designed for real-time analytics. It provides a web interface that allows users to interact with and query the data stored in Druid clusters. The index.html page is the entry point for accessing the web interface.
+https://trino.io/episodes/16.html
+_________________
+**GET /solr/admin/info/system?wt=json HTTP/1.1**
+
+Likely: Suspicious
+
+This request is associated with an attempt to retrieve system information from a Solr instance. The "/solr/admin/info/system?wt=json" endpoint is a well-known exploit that can be used to retrieve system information from a Solr instance. 
+https://sitecore.stackexchange.com/questions/29494/solr-suspicious-behavior 
+
