@@ -3,7 +3,7 @@ This page is dedicated to assisting the community with interpreting web logs
 
 # disclaimer
 
-This page is for informational and educational purposes **only**. Interpretation of data is highly specific to individual organzations and their specific applications. Blocking traffic or declaring an incident should occur only after a proper investigation and vetting of data is performed. 
+This page is for informational and educational purposes **only**. Interpretation of data is highly specific to individual organzations and their specific applications. Blocking traffic or declaring an incident should occur only after a proper investigation and vetting of data relevant to the specific circumstances is performed. 
 
 # data presentation
 
