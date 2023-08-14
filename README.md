@@ -13,6 +13,7 @@ _________________
 # Reference
 
 **\x16\x03\x01**
+Likely: Suspicious
 
 The string "\x16\x03\x01" is a representation of binary data in hexadecimal format and is commonly associated with the Transport Layer Security (TLS) protocol. It is often seen in logs related to web servers and security incidents.
 The string "\x16\x03\x01" is just the start of a TLS 1.0 handshake, i.e. content type (0x16 = handshake) followed by TLS version.
@@ -28,12 +29,12 @@ A favicon.ico is a small icon associated with a particular website or web page t
 It is also known as a shortcut icon, website icon, tab icon, URL icon, or bookmark icon2. A get request for favicon.ico is likely not an indicator of attack by itself. 
 _________________
 **GET /sendgrid.env HTTP/1.1**
-
+Likely: Suspicious
 The presence of this request in the log files likely indicates and attempt to GET Sendgrid API Credentials. A request of this nature should generally be considered suspicious unless it is part of some authorized activity. 
 https://stackoverflow.com/questions/71330025/how-do-i-implement-sendgrid-env-file
 _________________
 **GET /actuator/gateway/routes HTTP/1.1**
-
+Likely: Suspicious
 This request is associated with Spring.io Actuator API and is consistent with a request to GET routes. The documentation for the Actualor API shows this URL described as "To retrieve the routes defined in the gateway, make a GET request to /actuator/gateway/routes." An organization may consider this recon activity or otherwise suspicious. Our review of this in most circumstances is that this is suspicious. 
 _________________
 **GET /.env**
@@ -41,7 +42,7 @@ _________________
 This is consistent with an attempt to get environmental variables from a server. Likely suspicious and abnormal. 
 _________________
 **GET /_ignition/execute-solution HTTP/1.1**
-
+Likely: Suspicious
 This is a HTTP request that is related to the Ignition package in Laravel, a popular PHP web application framework. This is possibly an attacker attempting to exploit Ignition. 
 https://stackoverflow.com/questions/58249085/how-to-solve-facade-ignition-http-middleware-ignitionenabled
 _________________
@@ -50,3 +51,9 @@ _________________
 The "security.txt" file is typically placed in the ".well-known" directory of a website, which is a base directory for "well known" locations defined in RFC 5785.  A well-known URI is a URI [RFC3986] whose path component begins with
 the characters "/.well-known/", and whose scheme is "HTTP", "HTTPS", or another scheme that has explicitly been specified to use well-known URIs. The "security.txt" file is designed to be machine- and human-readable, and it can be used by security researchers to easily report security vulnerabilities to website owners. In summary, "GET /.well-known/security.txt" is a HTTP request for a file named "security.txt" that is used to define security policies for a website. The file is typically placed in the ".well-known" directory of a website and contains information about a company's security policy, including a vulnerability disclosure policy, a security point of contact, and additional data.
 https://datatracker.ietf.org/doc/html/rfc5785#section-3
+_________________
+**GET /console/ HTTP/1.1**
+Likely: Suspicious
+"GET /console/" is likely a HTTP request for a console or terminal application. The search results include references to several console or terminal applications, including Get Console, a powerful and complete terminal app that provides physical serial console access to network and other equipment as well as SSHv2, Telnet, and other protocols. Get Console is the first and only Apple approved iPad app that allows for physical serial connectivity in a terminal app - it also does Telnet, SSH, converts SecureCRT and PuTTY files and is fully scriptable. 
+https://www.youtube.com/watch?v=mll_SKgSbok
+https://apps.apple.com/us/app/get-console/id412067943
