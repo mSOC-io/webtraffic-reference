@@ -95,7 +95,7 @@ _________________
 
 Likely: Suspicious
 
-Recon attempts to identify Exchange Servers related to Hafnium Attack. 
+Recon attempts to identify Exchange Servers possibly related to Hafnium Attack. 
 https://learn.microsoft.com/en-us/answers/questions/571434/bad-actors-targeted-exchange-owa-auth-x-js
 _________________
 14. **GET /mPlayer HTTP/1.1**
