@@ -7,14 +7,18 @@ This page is for informational and educational purposes **only**. Interpretation
 
 # data presentation
 
-The data here is presented with a "log entry" in bold (e.g. **GET /robots.txt**) followed by commentary underneath. Again, this is for informational purposes only. 
+The data here is presented with a "log entry" in bold (e.g. **GET /robots.txt**) followed by commentary underneath. Again, this is for informational purposes only. Use at your own risk. 
+
+Recon = Attempts to identify if systems respond to a request. 
+
+Suspicious = Likely associated with some measure of potentially hostile activity, though not overtly hostile in its request. Meaning, the request itself isn't necessarily hostile in nature but is likely part of a systemic attempt to perform non-sanctioned activity. 
+
+Hostile = A request which is, more than likely, overtly hostile in nature. 
 _________________
 
-# Reference
+# References
 
 **\x16\x03\x01**
-
-Likely: Suspicious
 
 The string "\x16\x03\x01" is a representation of binary data in hexadecimal format and is commonly associated with the Transport Layer Security (TLS) protocol. It is often seen in logs related to web servers and security incidents. 
 The string "\x16\x03\x01" is just the start of a TLS 1.0 handshake, i.e. content type (0x16 = handshake) followed by TLS version.
@@ -33,7 +37,7 @@ _________________
 
 Likely: Suspicious
 
-The presence of this request in the log files likely indicates and attempt to GET Sendgrid API Credentials. A request of this nature should generally be considered suspicious unless it is part of some authorized activity. 
+The presence of this request in the log files likely indicates and attempt to GET Sendgrid API Credentials. A request of this nature should generally be considered suspicious unless it is part of some authorized activity. Often, this type of activity leads to attempts to abuse the SendGrid API. 
 https://stackoverflow.com/questions/71330025/how-do-i-implement-sendgrid-env-file
 _________________
 **GET /actuator/gateway/routes HTTP/1.1**
@@ -96,17 +100,19 @@ https://learn.microsoft.com/en-us/answers/questions/571434/bad-actors-targeted-e
 _________________
 **GET /mPlayer HTTP/1.1**
 
+Likely: Recon
+
 This appears to be related to mPlayer software associated with Linux. The presence of this request in honeypots is a curiousity. 
 _________________
 **GET /download/file.ext HTTP/1.1**
 
-Likely: Suspicious
+Likely: Recon
 
 This request shows up in recon attempts and can often be seen alongside requests for /mPlayer. There is evidence to support that this is looking for misconfigured servers where a default reference to file.ext has been left in the configuration.
 _________________
 **GET /portal/redlion HTTP/1.1**
 
-Likely: Suspicious
+Likely: Recon
 
 Recon attempts looking for RedLion automation/manufacturing software systems. 
 https://www.redlion.net/portfolio/secure-remote-access-platform
@@ -120,6 +126,8 @@ Likely: Hostile
 This request is attempting to utilize Shell to download and execute remote code from an IP address. In cases such as this, a secured server would respond with a 404 Not Found. A 404 not found response means that nothing has happened outside of a request to execute on this.
 _________________
 **SSTP_DUPLEX_POST /sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/ HTTP/1.1**
+
+Likely: Recon
 
 This is a Microsoft SSTP Point to Point traffic request over HTTPS, consistent with RFC 1945, RFC 2616 and RFC 2818. 
 
