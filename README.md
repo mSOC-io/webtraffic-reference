@@ -3,7 +3,7 @@ This page is dedicated to assisting the community with interpreting web logs
 
 # disclaimer
 
-This page is for informational and educational purposes **only**. Interpretation of data is highly specific to individual organzations and their specific applications. Blocking traffic or declaring an incident should occur only after a proper investigation and vetting of data relevant to the specific circumstances is performed. 
+This page is for informational and educational purposes **only**. Interpretation of data is highly specific to individual organzations and their specific applications. Blocking traffic or declaring an incident should occur only after a proper investigation and vetting of data relevant to the specific circumstances is performed. This is also not a complete list, but a list of some of the top requests it is reasonable to assume an analyst will run into. 
 
 # data presentation
 
@@ -149,6 +149,6 @@ SystemBC is a multifunctional threat combining proxy and remote access Trojan (R
 
 It matters if the file exists or not on the web server receiving the request. If the file does not exist, the server will likely reply with a 404 error and the scanner just moves on. 
 If the server replies with something other than 404, it might be worth taking a deeper look into the situation. 
-_________________
-GET /actuator/health HTTP/1.1
+
 https://socprime.com/blog/systembc-malware-increasingly-used-as-ransomware-backdoor/ 
+_________________
