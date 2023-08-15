@@ -137,3 +137,18 @@ If this succeeds, and there are sufficient ports on the server to accept the new
 
 https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sstp/7e5b2134-b4bf-435a-85bf-bfe0313fd889
 _________________
+19.** MGLNDD_10.1.1.1_80\n**
+
+There is evidence this is an indicator of Stretchoid scanners. Stretchoid is a system which scans the internet for servers. We are aware that some organizations chose to ban all internet scanners such as this both through method and though IP address/CIDR blocks. 
+_________________
+20. **GET /systembc/password.php HTTP/1.0**
+
+Likely: Hostile
+
+SystemBC is a multifunctional threat combining proxy and remote access Trojan (RAT) features. Security experts indicate that top ransomware-as-a-service (RaaS) collectives, including DarkSide, Ryuk, and Cuba, leverage SystemBC as a persistent backdoor able to maintain access to the attacked instances and perform a variety of notorious activities.
+
+It matters if the file exists or not on the web server receiving the request. If the file does not exist, the server will likely reply with a 404 error and the scanner just moves on. 
+If the server replies with something other than 404, it might be worth taking a deeper look into the situation. 
+_________________
+GET /actuator/health HTTP/1.1
+https://socprime.com/blog/systembc-malware-increasingly-used-as-ransomware-backdoor/ 
