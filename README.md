@@ -152,3 +152,16 @@ If the server replies with something other than 404, it might be worth taking a 
 
 https://socprime.com/blog/systembc-malware-increasingly-used-as-ransomware-backdoor/ 
 _________________
+21. **/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php**
+
+Likely: Hostile
+
+PHPUnit is a popular testing framework for PHP. It is reasonable to suspect that requests for this from external unauthorized vulnerability scanners may be checking for vulnerable versions unless a valid reason for this request can be identified. 
+
+https://phpunit.de/
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9841
+https://nvd.nist.gov/vuln/detail/CVE-2017-9841
+
+
+
+
