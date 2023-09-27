@@ -163,6 +163,15 @@ https://phpunit.de/
 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9841
 
 https://nvd.nist.gov/vuln/detail/CVE-2017-9841
+_________________
+22. **GET /.git/credentials**
+
+Likely: Hostile
+
+Observed in spoofed bot entries proporting to be from large technology companies, the IP addresses checking for this appear to be searching for credentials being stored on web servers. Git allows storage of credentials for remote repositories and this request ostensibly is looking for world accessible credentials which, in the absense of a real reason to make this request, may be considered hostile. 
+
+https://git-scm.com/docs/gitcredentials
+
 
 
 
